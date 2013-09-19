@@ -1,6 +1,7 @@
 Bookmarkmanager::Application.routes.draw do
 
 
+
   get "bookmarks/new" => "bookmarks#new", as: "new_bookmark"
 
   get "bookmarks/:id/edit" => "bookmarks#edit", as: "edit_bookmark"
@@ -17,6 +18,17 @@ Bookmarkmanager::Application.routes.draw do
 	put "bookmarks/:id" => "bookmarks#update"
 	
 	delete "bookmarks/:id" => "bookmarks#destroy", as: "bookmark"
+	
+	resources :users, only:[:new, :create]
+	
+	get "login" => "session#new", as: "login"
+	
+	post "sessions" => "session#create", as: "sessions"
+	
+	delete "logout" => "session#destroy", as: "logout"
+	
+	root to: "pages#home"
+
 
 	#get "hello" => "bookmarks#hello"
 	

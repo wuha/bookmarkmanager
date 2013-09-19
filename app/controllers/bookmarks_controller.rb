@@ -2,21 +2,24 @@
 
 class BookmarksController < ApplicationController
 	
+	before_filter :require_login
+
+	
 	def index
 		
-		@bookmarks=Bookmark.all
+		@bookmarks=current_user.bookmarks
 		
 	end
 	
 	def new
 		
-		@bookmark=Bookmark.new
+		@bookmark=current_user.bookmarks.build
 	
 	end
 	
 	def create
 		
-		@bookmark=Bookmark.new(params[:bookmark])
+		@bookmark=current_user.bookmarks.build(params[:bookmark])
 		
 		if @bookmark.save
 		
@@ -29,14 +32,14 @@ class BookmarksController < ApplicationController
 	
 	def edit
 		
-		@bookmark=Bookmark.find(params[:id])
+		@bookmark=current_user.bookmarks.find(params[:id])
 	
 	end
 	
 	
 	def update
 		
-		@bookmark=Bookmark.find(params[:id])
+		@bookmark=current_user.bookmarks.find(params[:id])
 		
 		if @bookmark.update_attributes(params[:bookmark])
 			redirect_to bookmarks_path, notice: "Erfolgreich aktualisiert"
@@ -48,7 +51,7 @@ class BookmarksController < ApplicationController
 	
 	def destroy
 	
-		@bookmark=Bookmark.find(params[:id])
+		@bookmark=current_user.bookmarks.find(params[:id])
 		@bookmark.destroy
 		
 		flash[:notice]="Bookmark geloescht!"
@@ -59,8 +62,21 @@ class BookmarksController < ApplicationController
 	
 	def show
 		#Liest über Params die ID des zu holenden Datensatzes aus der URL und sucht mit find danach.
-		@bookmark=Bookmark.find(params[:id])
+		@bookmark=current_user.bookmarks.find(params[:id])
 
 	end
+	
+	private
+	
+	def require_login
+		unless user_signed_in?
+			redirect_to login_path, alert: "Bitte melden Sie sich an"
+		end
+	end
+	
+	
+	
+	
+	
 	
 end
