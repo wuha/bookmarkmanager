@@ -1,0 +1,29 @@
+<% @title="Details" %>
+<h2>Bookmark Details</h2>
+
+<p>
+	<b>Title</b>
+	<%= @bookmark.title%>
+<p>
+
+<p>
+	<b>ULR</b>
+	<%= @bookmark.url%>
+</p>
+
+<p>
+	<b>Kommentar</b>
+	<%= @bookmark.comment%>
+</p>
+
+<p>
+	<b>Erzeugt am</b>
+	<%= @bookmark.created_at%>
+</p>
+
+<p>
+	<b>Zuletzt gaendert</b>
+	<%= @bookmark.updated_at%>
+</p>
+
+<%= link_to "Zurueck" , bookmarks_path %>
