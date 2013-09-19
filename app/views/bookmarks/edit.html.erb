@@ -1,20 +1,4 @@
 <% @title="Bearbeiten" %>
 <h2>Favoriten bearbeiten</h2>
-<%= form_for(@bookmark) do |f| %>
-	<p>
-		<%= f.label :title %>
-		<%= f.text_field :title%>
-	</p>
-	<p>
-		<%= f.label :url %>
-		<%= f.text_field :url%>
-	</p>
-	<p>
-		<%= f.label :comment %>
-		<%= f.text_area :comment%>
-	</p>
-	<p>
-		<%= f.submit%>
-	<p>
-<%end%>
+<%= render "form" %>
 <%= back_to_list%>
