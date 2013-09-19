@@ -3,7 +3,9 @@ module BookmarksHelper
 
 	def back_to_list
 	
-		link_to "Zurueck zur Liste", bookmarks_path
+		content_tag(:p,
+								link_to("Zurueck zur Liste", bookmarks_path),
+								class: "subNavigation")
 	
 	end
 
