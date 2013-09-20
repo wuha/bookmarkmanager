@@ -1,5 +1,5 @@
 <% if user_signed_in? %>
-	<p><%= link_to "Meine Links", bookmarks_path%></p>
+	<p><%= link_to t("links.my_bookmarks"), bookmarks_path%></p>
 <%else%>
-	<p><%= link_to "Konto anlegen", new_user_path %></p>
+	<p><%= link_to t("links.new_user"), new_user_path %></p>
 <%end%>

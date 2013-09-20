@@ -23,7 +23,7 @@ class BookmarksController < ApplicationController
 		
 		if @bookmark.save
 		
-			redirect_to bookmarks_path, notice: "Bookmark erfolgreich angelegt"
+			redirect_to bookmarks_path, notice: t("messages.new_bookmark")
 		else
 			render "new"
 		end
@@ -42,7 +42,7 @@ class BookmarksController < ApplicationController
 		@bookmark=current_user.bookmarks.find(params[:id])
 		
 		if @bookmark.update_attributes(params[:bookmark])
-			redirect_to bookmarks_path, notice: "Erfolgreich aktualisiert"
+			redirect_to bookmarks_path, notice: t("messages.update_bookmark")
 		else
 			render "edit"
 		end
@@ -54,7 +54,7 @@ class BookmarksController < ApplicationController
 		@bookmark=current_user.bookmarks.find(params[:id])
 		@bookmark.destroy
 		
-		flash[:notice]="Bookmark geloescht!"
+		flash[:notice]=t("messages.delete_bookmark")
 		redirect_to bookmarks_path
 	
 	end
@@ -70,7 +70,7 @@ class BookmarksController < ApplicationController
 	
 	def require_login
 		unless user_signed_in?
-			redirect_to login_path, alert: "Bitte melden Sie sich an"
+			redirect_to login_path, alert: t("messages.user_not_logged_in")
 		end
 	end
 	

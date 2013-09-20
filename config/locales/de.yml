@@ -1,0 +1,47 @@
+de:
+  activerecord:
+   models:
+      bookmark: "Lesezeichen"
+      user: "Benutzer"
+   attributes:
+      bookmark:
+        title: "Titel"
+        url: "URL"
+        comment: "Kommentar" 
+        created_at: "Angelegt am"  
+        modified_at: "Geändert am"
+      user:
+        email: "E-Mail"
+        password: "Passwort"
+        password_digest: "Passwort"
+        password_conformation: "Passwortbestätigen"   
+  links:
+    my_bookmarks: "Meine Lesezeichen"
+    new_bookmark: "Neues Lesezeichen"
+    edit_bookmark: "Bearbeiten"
+    show_bookmark: "Details"
+    delete_bookmark: "Löschen"
+    logout: "Abmelden"
+    login: "Anmelden"
+    new_user: "Konto anlegen"
+  messages:
+    new_bookmark: "Lesenzeichen wurde erfolgreich angelegt."
+    update_bookmark: "Lesenzeichen wurde aktualisiert."
+    delete_bookmark: "Lesezeichen wurde gelöscht."
+    user_not_logged_in: "Bitte melden Sie sich an."
+    login_failure: "E-Mail oder Passwort falsch."
+    new_user: "Benutzer erfolgreich angelegt."
+    user_login: "Sie sind angemeldet."
+    user_logout: "Sie sind abgemeldet."
+    confirm_delete_bookmark: "Wollen Sie das Lesenzeichen wirklich löschen?"
+  text:
+    my_bookmarks: "Meine Linksammlung"
+    bookmark_list: "Lesenzeichen Liste"
+    new_bookmark: "Lesezeichen anlegen"
+    show_bookmark: "Lesenzeichen Details"
+    edit_bookmark: "Lesenzeichen bearbeiten"
+    new_user: "Neuer Benutzer anlegen"
+    user_login: "Anmelden"
+    email: "E-Mail"
+    password: "Passwort" 
+        

@@ -1,7 +1,7 @@
-<h2>Liste der Bookmarks</h2>
+<h2><%= t("text.bookmark_list") %></h2>
 
 <ul>
 	<%= render @bookmarks %>
 </ul>
 
-<p><%= link_to "Neuer Bookmark", new_bookmark_path %>
+<p><%= link_to t("links.new_bookmark"), new_bookmark_path %>

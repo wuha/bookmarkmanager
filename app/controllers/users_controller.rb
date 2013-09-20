@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 		@user=User.new(params[:user])
 		
 		if @user.save
-			redirect_to login_path, notice: "Ihr Konto wurde angelegt"
+			redirect_to login_path, notice: t("messages.new_user")
 		else
 			render "new"
 		end

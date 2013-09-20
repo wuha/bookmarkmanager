@@ -9,9 +9,9 @@ class SessionController < ApplicationController
 		
 		if user && user.authenticate(params[:password])
 			session[:user_id]=user.id
-			redirect_to bookmarks_path, notice: "Sie sind jetzt eingeloggt"
+			redirect_to bookmarks_path, notice: t("messages.user_login")
 		else
-			flash.now.alert = "Benutzer/Passwort falsch!"
+			flash.now.alert = t("messages.login_failure")
 			render "new"
 		end
 		
@@ -20,7 +20,8 @@ class SessionController < ApplicationController
 	def destroy
 	
 		session[:user_id]=nil
-		redirect_to root_path, notice: "Sie wurden abgemeldet"
+		redirect_to root_path, notice: t("messages.user_logout")
+
 	
 	end
 

@@ -1,5 +1,47 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
-  hello: "Hello world"
+  activerecord:
+   models:
+      bookmark: "Bookmark"
+      user: "User"
+   attributes:
+      bookmark:
+        title: "Title"
+        url: "URL"
+        comment: "Comment"
+        created_at: "Created at"  
+        modified_at: "Modified at" 
+      user:
+        email: "email"
+        password: "password"
+        password_digest: "password"
+        password_conformation: "Confirm Password" 
+  links:
+    my_bookmarks: "My Bookmarks"
+    new_bookmark: "New Bookmark"
+    edit_bookmark: "Edit Bookmark"
+    show_bookmark: "details"
+    delete_bookmark: "delete"
+    logout: "logout"
+    login: "login"
+    new_user: "Create new Account"
+  messages:
+    new_bookmark: "Bookmark successfully created."
+    update_bookmark: "Bookmark successfully updated."
+    delete_bookmark: "Bookmark successfully deleted"
+    user_not_logged_in: "Please login"
+    login_failure: "Wrong email or password"
+    new_user: "Account successfully created."
+    user_login: "You are now logged in."
+    user_logout: "You are now logged out."
+    confirm_delete_bookmark: "Do you really want delete this bookmark?"
+  text:
+    my_bookmarks: "My Bookmarks"
+    bookmark_list: "Bookmark List"
+    new_bookmark: "New Bookmark"
+    show_bookmark: "Bookmark Details"
+    edit_bookmark: "Edit Bookmark"
+    new_user: "Create new account"
+    user_login: "Login"
+    email: "email"
+    password: "password" 
+    
