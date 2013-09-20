@@ -1,34 +1,36 @@
 Bookmarkmanager::Application.routes.draw do
 
-
-
-  get "bookmarks/new" => "bookmarks#new", as: "new_bookmark"
-
-  get "bookmarks/:id/edit" => "bookmarks#edit", as: "edit_bookmark"
-
-	get "bookmarks" => "bookmarks#index", as: "bookmarks"
+	scope "(:locale)", locale: /en|de/ do
 	
-	#definiert die Route zum Anzeigen der Detials. Es wird definiert das :id eine varibale in der URL ist
-	#Ueber as: wird der pfad ueber eine methode zur verfuegung gestellt
-	get "bookmarks/:id" => "bookmarks#show", as: "bookmark"
+	  get "bookmarks/new" => "bookmarks#new", as: "new_bookmark"
 	
-	#Definiert die Route um bei einem post request (vom Formularfeld) auf die Methode create zu leiten. 
-	post "bookmarks" => "bookmarks#create"
+	  get "bookmarks/:id/edit" => "bookmarks#edit", as: "edit_bookmark"
 	
-	put "bookmarks/:id" => "bookmarks#update"
-	
-	delete "bookmarks/:id" => "bookmarks#destroy", as: "bookmark"
-	
-	resources :users, only:[:new, :create]
-	
-	get "login" => "session#new", as: "login"
-	
-	post "sessions" => "session#create", as: "sessions"
-	
-	delete "logout" => "session#destroy", as: "logout"
-	
-	root to: "pages#home"
-
+		get "bookmarks" => "bookmarks#index", as: "bookmarks"
+		
+		#definiert die Route zum Anzeigen der Detials. Es wird definiert das :id eine varibale in der URL ist
+		#Ueber as: wird der pfad ueber eine methode zur verfuegung gestellt
+		get "bookmarks/:id" => "bookmarks#show", as: "bookmark"
+		
+		#Definiert die Route um bei einem post request (vom Formularfeld) auf die Methode create zu leiten. 
+		post "bookmarks" => "bookmarks#create"
+		
+		put "bookmarks/:id" => "bookmarks#update"
+		
+		delete "bookmarks/:id" => "bookmarks#destroy", as: "bookmark"
+		
+		resources :users, only:[:new, :create]
+		
+		get "login" => "session#new", as: "login"
+		
+		post "sessions" => "session#create", as: "sessions"
+		
+		delete "logout" => "session#destroy", as: "logout"
+		
+		get "/:locale" => "pages#home"
+		
+		root to: "pages#home"
+	end
 
 	#get "hello" => "bookmarks#hello"
 	

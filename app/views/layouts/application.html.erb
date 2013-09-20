@@ -35,6 +35,13 @@
 			<%else%>
 				<%= link_to t("links.login"), login_path %>
 			<%end%>
+			
+			<div id="locales">
+				<%= link_to "Deutsch", locale_path("de") %>
+				<%= link_to "English", locale_path("en") %>
+			
+			</div>
+			
 		</div>	
 		
 	</div>
